@@ -14,6 +14,7 @@ app.use(express.json());
 app.use('/products', productRoutes);
 
 app.use('/api/auth', require ('./routes/auth'));
+app.use('/api/private', require ('./routes/private'));
 
 // ErrorHandler (debe ser lo último del middleware)
 app.use(errorHandler);

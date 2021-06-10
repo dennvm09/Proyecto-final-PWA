@@ -12,10 +12,8 @@ exports.register = async(req, res, next) => {
             password,
         });
 
-        res.status(201).json({
-            success: true,
-            user,
-        });
+        sendToken(user, 201, res);
+        
     } catch (error) {
         next(error);        
     };
@@ -43,10 +41,7 @@ exports.login = async(req, res, next) => {
             // res.status(401).json({success: false, error: "Invalid credentials" });      
             return next(new ErrorResponse("Invalid credentials", 401));      
         }
-        res.status(200).json({
-            success: true,
-            token: "ifiuwhgood4u",
-        });
+        sendToken(user, 201, res);
     } catch (error) {
         res.status(500).json({ success: false, error: error.message });
     }
@@ -58,4 +53,9 @@ exports.forgotpassword = (req, res, next) => {
 
 exports.resetpassword = (req, res, next) => {
     res.send("Reset Password route");
+};
+
+const sendToken = (user, statusCode, res) => {
+    const token = user.getSignedToken();
+    res.status(statusCode).json({ success: true, token });
 };
