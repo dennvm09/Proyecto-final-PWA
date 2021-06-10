@@ -62,7 +62,7 @@ function Header() {
                 {isAdmin && adminRouter()}
 
                 {
-                    isLogged ? loggedRouter() : <li><Link to="/login">Login ✥ Register</Link></li>
+                    isLogged ? loggedRouter() : <li><Link to="/login">Sign in</Link></li>
                 }
 
                 <li onClick={() => setMenu(!menu)}>

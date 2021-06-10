@@ -7,21 +7,23 @@ header{
     justify-content: space-around;
     align-items: center;
     border-bottom: 1px solid #ddd;
+    background-color: #F95A37;
 }
 header .logo{
     flex: 1;
 }
 header a{
     text-transform: uppercase;
-    color: #555;
+    color: #F4F3EB;
 }
 header ul li{
     display: inline-block;
     opacity: 0.7;
     padding: 0 20px;
+    font-weight: bold;
 }
 header ul li:hover{
-    opacity: 1;
+    opacity: 1
 }
 .menu{
     display: none;
@@ -31,7 +33,7 @@ header ul li:hover{
     margin-right: 20px;
 }
 .cart-icon span{
-    background: crimson;
+    background: #7DC9E7;
     border-radius: 20px;
     color: white;
     position: absolute;
