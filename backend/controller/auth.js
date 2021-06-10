@@ -1,4 +1,5 @@
 const User = require("../models/User");
+const ErrorResponse = require("../utils/errorResponse");
 
 
 exports.register = async(req, res, next) => {
@@ -16,34 +17,31 @@ exports.register = async(req, res, next) => {
             user,
         });
     } catch (error) {
-        res.status(500).json({
-            success: false,
-            error: error.message,
-        });        
+        next(error);        
     };
     
 };
 
 exports.login = async(req, res, next) => {
-    // res.send("Login route");
     const { email, password } = req.body;
-
 
     // Check if email and password is provided
     if (!email || !password) {
-        res.status(400).json({success: false, error: "Please provide an email and password" });        
+        return next(new ErrorResponse("Please provide an email and password", 400));     
     }
 
     try {
         const user = await User.findOne({ email }).select("+password");
         if (!user) {
-            res.status(404).json({success: false, error: "Invalid credentials" });
+            // res.status(401).json({success: false, error: "Invalid credentials" });
+            return next(new ErrorResponse("Invalid credentials", 401));
         }
 
         const isMatch = await user.matchPasswords(password);
 
         if (!isMatch) {
-            res.status(404).json({success: false, error: "Invalid credentials" });            
+            // res.status(401).json({success: false, error: "Invalid credentials" });      
+            return next(new ErrorResponse("Invalid credentials", 401));      
         }
         res.status(200).json({
             success: true,
