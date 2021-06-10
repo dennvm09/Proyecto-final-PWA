@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config("./config.env");
 const express = require('express');
 const connectDB = require('./config/db');
 const productRoutes = require('./routes/productRoutes');
@@ -10,6 +10,8 @@ const app = express();
 app.use(express.json());
 
 app.use('/products', productRoutes);
+
+app.use('/api/auth', require ('./routes/auth'));
 
 const PORT = process.env.PORT || 5000;
 
