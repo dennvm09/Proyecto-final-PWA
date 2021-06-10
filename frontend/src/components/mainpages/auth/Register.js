@@ -15,6 +15,7 @@ function Register() {
     const registerSubmit = async e =>{
         e.preventDefault()
         try {
+            console.log("Estoy tratando de registrarte, pero no puedo.")
             await axios.post('/user/register', {...user})
 
             localStorage.setItem('firstLogin', true)
