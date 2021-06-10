@@ -6,7 +6,6 @@
     margin: 20px 0;
 }
 
-/* ----------- Product Item ----------------- */
 @import url("../utils/productItem/productItem.css");
 
 .delete-all{
@@ -21,13 +20,13 @@
 }
 .delete-all span{
     text-transform: uppercase;
-    color: rgb(3, 165, 206);
+    color: #7DC9E7;
     letter-spacing: 1.3px;
 }
 .delete-all button{
-    border: 1px solid crimson;
+    border: 1px solid #F95A37;
     padding: 10px 25px;
-    color: crimson;
+    color: #F95A37;
     text-transform: uppercase;
 }
 
@@ -60,6 +59,8 @@
 .load_more button{
     padding: 10px 25px;
     margin-bottom: 20px;
-    border: 1px solid #555;
+    border: 1px solid;
     text-transform: capitalize;
+    background-color: #7DC9E7;
 }
+
