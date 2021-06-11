@@ -2,7 +2,6 @@ import React, {useContext, useState} from 'react'
 import {GlobalState} from '../../GlobalState'
 import Menu from './icon/menu.svg'
 import Close from './icon/close.svg'
-import Cart from './icon/cart.svg'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 
@@ -76,7 +75,7 @@ function Header() {
                 :<div className="cart-icon">
                     <span>{cart.length}</span>
                     <Link to="/cart">
-                        <img src={Cart} alt="" width="30" />
+                        <i className="fas fa-shopping-cart cart-link"></i>
                     </Link>
                 </div>
             }
