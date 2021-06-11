@@ -10,6 +10,10 @@ header{
     background-color: #F95A37;
 }
 
+.colorrr {
+    color: black;
+}
+
 header .logo{
     flex: 1;
     padding-left: 10px;

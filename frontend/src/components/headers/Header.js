@@ -56,12 +56,12 @@ function Header() {
             </div>
 
             <ul style={styleMenu}>
-                <li><Link to="/">{isAdmin ? 'Products' : 'Shop'}</Link></li>
+                <li><Link className="colorrr" to="/">{isAdmin ? 'Products' : 'Shop'}</Link></li>
 
                 {isAdmin && adminRouter()}
 
                 {
-                    isLogged ? loggedRouter() : <li><Link to="/login">Sign in</Link></li>
+                    isLogged ? loggedRouter() : <li><Link className="colorrr" to="/login">Sign in</Link></li>
                 }
 
                 <li onClick={() => setMenu(!menu)}>

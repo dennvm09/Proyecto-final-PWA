@@ -8,8 +8,8 @@ const initialState = {
     product_id: '',
     title: '',
     price: 0,
-    description: 'Hermosa blusa perlada para personas con gustos sofisticados.',
-    content: 'Hermosa ',
+    description: '',
+    content: '',
     category: '',
     _id: ''
 }
