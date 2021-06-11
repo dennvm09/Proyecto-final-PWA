@@ -9,7 +9,7 @@ function ProductItem({product, isAdmin, deleteProduct, handleCheck}) {
                 isAdmin && <input type="checkbox" checked={product.checked}
                 onChange={() => handleCheck(product._id)} />
             }
-            <img src={product.image} alt="" />
+            <img src={product.images} alt="" />
 
             <div className="product_box">
                 <h2 title={product.title}>{product.title}</h2>
