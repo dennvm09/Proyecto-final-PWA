@@ -1,6 +1,6 @@
 import React, {useState, useContext} from 'react'
 import {GlobalState} from '../../../GlobalState'
-import axios from 'axios'
+import axios from '../../../api/Axios'
 
 function Categories() {
     const state = useContext(GlobalState)

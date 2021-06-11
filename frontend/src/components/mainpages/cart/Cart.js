@@ -1,6 +1,6 @@
 import React, {useContext, useState, useEffect} from 'react'
 import {GlobalState} from '../../../GlobalState'
-import axios from 'axios'
+import axios from '../../../api/Axios'
 //import PaypalButton from './PaypalButton'
 
 function Cart() {
